@@ -1,0 +1,12 @@
+.ava{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    font-size: 20px;
+    color: white;
+}
+.ava img{
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
