@@ -1,0 +1,54 @@
+.content{
+    background-color: darkred;
+}
+.content img {
+    width: 100%;
+    height: 600px;
+
+}
+.ava{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    font-size: 20px;
+    color: white;
+}
+.ava img{
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+.my_post{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+
+}
+.my_post input{
+    width: 50%;
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.my_post button{
+    border-radius: 10px;
+    width: 10%;
+    border: 2px solid white;
+    background-color: red;
+    color: aqua;
+    padding: 10px 40px 10px 40px;
+}
+.first_post{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+}
+.first_post img{
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}

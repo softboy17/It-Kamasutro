@@ -1,0 +1,23 @@
+
+.my_post{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+
+}
+.my_post input{
+    width: 50%;
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.my_post button{
+    border-radius: 10px;
+    width: 10%;
+    border: 2px solid white;
+    background-color: red;
+    color: aqua;
+    padding: 10px 40px 10px 40px;
+}
