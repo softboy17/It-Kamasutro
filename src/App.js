@@ -5,7 +5,7 @@ import Header from "./component/network/Header/Header";
 import Navbar from "./component/network/Navbar/Navbar";
 import Profile from "./component/network/Profile/Profile";
 import Dialogs from "./component/network/Dialogs/Dialogs";
-import Icon from './asserts/spider-man.jpeg';
+
 
 function App() {
     return (
@@ -15,8 +15,8 @@ function App() {
             <Navbar/>
             <div className="app-wrapper-content">
             <Routes>
-            <Route path="/profile" Component={Profile}/>
-            <Route path="/dialogs" Component={Dialogs}/>
+            <Route path="/profile" render={ () => <Profile/> }/>
+            <Route path="/dialogs" render={ () => <Dialogs/>}/>
             </Routes>
             </div>    
         </div>
