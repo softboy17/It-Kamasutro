@@ -13,13 +13,13 @@ let state = {
             { id: 4, name: 'Adele' },
             { id: 5, name: 'Daka' },
         ],
-        messages: [
-            { id: 1, message: 'Hi' },
-            { id: 2, message: 'How are you' },
-            { id: 3, message: 'How old are you' },
-            { id: 4, message: 'Yoooo' }
+        // messages: [
+        //     { id: 1, message: 'Hi' },
+        //     { id: 2, message: 'How are you' },
+        //     { id: 3, message: 'How old are you' },
+        //     { id: 4, message: 'Yoooo' }
 
-        ]
+        // ]
     }
 
 
