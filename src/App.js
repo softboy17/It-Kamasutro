@@ -1,5 +1,5 @@
 import React from "react";
-import {  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import './App.css';
 import Header from "./component/network/Header/Header";
 import Navbar from "./component/network/Navbar/Navbar";
@@ -9,16 +9,18 @@ import Dialogs from "./component/network/Dialogs/Dialogs";
 
 function App(props) {
     return (
-        
+
         <div className='app-wrapper'>
-            <Header/>
-            <Navbar/>
+            <Header />
+            <Navbar />
             <div className="app-wrapper-content">
-            <Routes>
-            <Route path="/profile" element={ <Profile state = {props.state.profilePage} addPost= {props.addPost}/> }/>
-            <Route path="/dialogs" element={ <Dialogs state = {props.state.dialogsPage}/>}/>
-            </Routes>
-            </div>    
+                <Routes>
+                    <Route path="/profile" element={<Profile profilePage={props.state.profilePage}
+                        updateNewPostText={props.updateNewPostText}
+                        addPost={props.addPost} />} />
+                    <Route path="/dialogs" element={<Dialogs state={props.state.dialogsPage} />} />
+                </Routes>
+            </div>
         </div>
     );
 }
