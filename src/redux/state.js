@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render"
+let rerenderEntireTree = () => {
+    console.log('state is changed')
+}
 
 
 let state = {
@@ -28,24 +30,28 @@ let state = {
 
 }
 
-export let addPost = () =>{
+export const addPost = () => {
     let newPost = {
         id: 3,
         name: state.profilePage.newPostText,
-        age: 17, 
-        src: 'https://64.media.tumblr.com/f4b778464a57f9080445f30547e38b10/1e569c61da8b911b-c4/s540x810/f89b06211af7f036ab26fd787b50d20d47885d9f.jpg', 
+        age: 17,
+        src: 'https://64.media.tumblr.com/f4b778464a57f9080445f30547e38b10/1e569c61da8b911b-c4/s540x810/f89b06211af7f036ab26fd787b50d20d47885d9f.jpg',
         alt: 'piter'
 
     }
     rerenderEntireTree(state)
     state.profilePage.newPostText = ''
     state.profilePage.posts.push(newPost)
-    
-} 
 
-export let updateNewPostText = (newText) =>{
+}
+
+export const updateNewPostText = (newText) => {
     rerenderEntireTree(state)
     state.profilePage.newPostText = newText
-    
-} 
+
+}
+
+export const subscribe = (obserber) => {
+  rerenderEntireTree = obserber
+}
 export default state
