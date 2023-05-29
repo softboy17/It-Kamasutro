@@ -25,8 +25,11 @@ let store = {
     getState() {
         return this._state;
     },
-    rerenderEntireTree() {
+    _callSubscriber() {
         console.log('state is changed')
+    },
+    subscribe(obserber) {
+        this._callSubscriber = obserber
     },
     addPost() {
         let newPost = {
@@ -37,18 +40,35 @@ let store = {
             alt: 'piter'
 
         }
-        this.rerenderEntireTree(this._state)
+        this._callSubscriber(this._state)
         this._state.profilePage.newPostText = ''
         this._state.profilePage.posts.push(newPost)
 
     },
     updateNewPostText(newText) {
-        this.rerenderEntireTree(this._state)
+        this._callSubscriber(this._state)
         this._state.profilePage.newPostText = newText
 
     },
-    subscribe(obserber) {
-        this.rerenderEntireTree = obserber
+    dispatch(action){
+        if (action.type === 'ADD-POST'){
+            let newPost = {
+                id: 3,
+                name: this._state.profilePage.newPostText,
+                age: 17,
+                src: 'https://64.media.tumblr.com/f4b778464a57f9080445f30547e38b10/1e569c61da8b911b-c4/s540x810/f89b06211af7f036ab26fd787b50d20d47885d9f.jpg',
+                alt: 'piter'
+    
+            }
+            this._callSubscriber(this._state)
+            this._state.profilePage.newPostText = ''
+            this._state.profilePage.posts.push(newPost)
+        }
+        else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+            this._callSubscriber(this._state)
+            this._state.profilePage.newPostText = action.newText
+        }
+
     }
 
 }
