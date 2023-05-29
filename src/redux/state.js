@@ -85,10 +85,10 @@ export const updateNewPostText = (text) => {
             type: SEND_MESSAGE
         }
     }
-    export const updateNewMessage = (body) => {
+    export const updateNewMessage = (text) => {
         return{
             type: UPDATE_NEW_MESSAGE_BODY,
-            body: body
+            body: text
         }    
 }
 
