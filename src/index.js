@@ -3,21 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import store from './redux/redux-store';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import StoreContext from './StoreContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-      <StoreContext.Provider value={store}>
+      <Provider store={store}>
         <App/>
-     </StoreContext.Provider>
+     </Provider>
       </BrowserRouter>
     </React.StrictMode>
   );
