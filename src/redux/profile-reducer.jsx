@@ -8,7 +8,7 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-      case ADD_POST:{
+      case ADD_POST:
         let newPost = {
           id: 3,
           name: state.newPostText,
@@ -16,16 +16,24 @@ const profileReducer = (state = initialState, action) => {
           src: 'https://64.media.tumblr.com/f4b778464a57f9080445f30547e38b10/1e569c61da8b911b-c4/s540x810/f89b06211af7f036ab26fd787b50d20d47885d9f.jpg',
           alt: 'piter'
         };
-        let stateCopy = {...state};
-        stateCopy.posts = [...state.posts]
-        stateCopy.posts.push(newPost)
-        stateCopy.newPostText = '';
-        return stateCopy;
+        // let stateCopy = {...state};
+        // stateCopy.posts = [...state.posts]
+        // stateCopy.posts.push(newPost)
+        // stateCopy.newPostText = '';
+        // return stateCopy;
+        return {
+          ...state,
+          posts: [...state.posts, newPost],
+          newPostText: ''
+
       }
-        case UPDATE_NEW_POST_TEXT:{
-          let stateCopy = {...state }
-          stateCopy.newPostText = action.newText;
-          return stateCopy;
+        case UPDATE_NEW_POST_TEXT:
+          // let stateCopy = {...state }
+          // stateCopy.newPostText = action.newText;
+          // return stateCopy;
+        return{
+          ...state,
+          newPostText: action.newText
         }
       default:
         return state;
