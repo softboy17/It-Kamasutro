@@ -3,11 +3,7 @@ const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS'
 let initialState = {
-    users: [
-            {id: 1, photoUrl: 'https://abrakadabra.fun/uploads/posts/2022-01/1643018590_23-abrakadabra-fun-p-zhivie-oboi-mailz-morales-39.jpg' , followed: false, fullName: 'Dmitry', status: 'I am looking for a job', location: {city: 'Minsk', country: 'Belarus'}},
-            {id: 2,  photoUrl: 'https://abrakadabra.fun/uploads/posts/2022-01/1643018590_23-abrakadabra-fun-p-zhivie-oboi-mailz-morales-39.jpg' , followed: true, fullName: 'Dasha', status: 'I have a job', location: {city: 'Moscow', country: 'Russia'}},
-            {id: 3,  photoUrl: 'https://abrakadabra.fun/uploads/posts/2022-01/1643018590_23-abrakadabra-fun-p-zhivie-oboi-mailz-morales-39.jpg' , followed: false, fullName: 'Nikita', status: 'I am looser', location: {city: 'Kiev', country: 'Ukraine'}},
-    ]
+    users:[]
 }
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -32,9 +28,8 @@ const usersReducer = (state = initialState, action) => {
             })    
             } 
             case SET_USERS:
-                return{
-                    ...state, users: [...state.users,  ...action.users]
-                }
+                    return { ...state, users: action.users };
+
       default:
         return state;
     }
